@@ -7,8 +7,8 @@
 
   <meta name="author" content="{{ .Site.Author.name }}" />
   
-  {{ if .Description }}
-  <meta name="description" content="{{ .Description }}">
+  {{ if or .Description .Site.Params.description }}
+  <meta name="description" content="{{ or .Description .Site.Params.description }}">
   {{ end }}
 
   {{ .Hugo.Generator }}
